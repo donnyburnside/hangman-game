@@ -1,0 +1,10 @@
+/*
+  Settings: Transitions
+  ---------------------
+  Re-usable variables for transitions
+*/
+
+$ui-transition-timing: cubic-bezier(0.25, 0.8, 0.25, 1);
+
+/* This should be the same as viewAnimationDuration (set in config.js) */
+$ui-transition-duration: 1s;

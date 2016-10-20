@@ -1,0 +1,48 @@
+/*
+  Component: Branding
+  -------------------
+  Styles for the Branding component
+*/
+
+.branding {
+  position:relative;
+  display:inline-block;
+
+  &__title {
+    margin-top:0;
+    margin-bottom:1.25rem;
+
+    font-family:$logo-font;
+    font-size:3rem;
+    line-height:1;
+    color:#fff;
+    text-shadow:1px 1px rgba(0,0,0,0.125);
+
+    @mixin mq 568 {
+      font-size:4rem;
+    }
+  }
+
+  &__description {
+
+    margin-top:0;
+    margin-bottom:0;
+
+    font-size:0.625rem;
+    /*color:$brand-colour-secondary;*/
+    color:rgba(255,255,255,0.25);
+    text-shadow:1px 1px rgba(0,0,0,0.0625);
+
+    @mixin mq 567, max {
+      text-align:center;
+    }
+
+    @mixin mq 568 {
+      position:absolute;
+      right:-0.25rem;
+      bottom:0.25rem;
+    }
+
+  }
+
+}

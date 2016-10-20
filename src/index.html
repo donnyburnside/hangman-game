@@ -1,0 +1,115 @@
+<!doctype html>
+<html itemscope itemtype="http://schema.org/WebApplication" lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui">
+  <title>Hangman &mdash; Made by Donny Burnside</title>
+  <link href="https://fonts.googleapis.com/css?family=Merriweather|Roboto" rel="stylesheet">
+</head>
+<body>
+
+  <div class="app" id="app"></div>
+
+  <template id="start">
+    <div class="app-view" data-scene="start">
+
+      <div class="branding">
+        <h1 class="branding__title" data-animation="fade-from-bottom" data-animation-duration="0.5s" data-animation-delay="0.25s">Hangman</h1>
+        <p class="branding__description" data-animation="fade-from-bottom" data-animation-duration="0.5s" data-animation-delay="0.5s">Made by Donny Burnside</p>
+      </div>
+
+      <div data-animation="fade-from-bottom" data-animation-duration="0.5s" data-animation-delay="0.75s">
+        <a class="button button--large" href="#game">Start Game</a>
+      </div>
+
+    </div>
+  </template>
+
+  <template id="game">
+    <div class="app-view" data-scene="game">
+
+      <div class="game">
+
+        <div class="game__header">
+          <h2 class="heading-2">Guess the word!</h2>
+        </div>
+
+        <div class="game__scene">
+          <canvas class="canvas" width="320" height="180"></canvas>
+        </div>
+
+        <div class="game__controls">
+
+          <div class="current-word"></div>
+
+          <div class="row">
+
+            <div class="column-12 column-568-6 column-768-8">
+
+              <p class="text-transparent">
+                <small>Enter a letter below...</small>
+              </p>
+
+              <div class="form-group form-group--inline">
+                <input class="form-field" type="text" placeholder="Enter a letter" maxlength="1">
+                <button class="button" type="button">Submit</button>
+              </div>
+
+              <div class="errors"></div>
+
+            </div>
+
+            <div class="column-12 column-568-6 column-768-4">
+
+              <div class="attempts">
+                <p class="text-transparent">
+                  <small>Used letters</small>
+                </p>
+                <div class="used-letters"></div>
+              </div>
+
+            </div>
+
+          </diV>
+
+        </div>
+
+      </div>
+
+    </div>
+  </template>
+
+  <template id="win">
+    <div class="app-view" data-scene="win">
+
+      <h2 class="heading-1" data-animation="fade-from-bottom" data-animation-duration="0.5s" data-animation-delay="0.25s">Victory!</h2>
+      <p class="text-transparent" data-animation="fade-from-bottom" data-animation-duration="0.5s" data-animation-delay="0.5s">
+        <small>You correctly guessed the word</small>
+      </p>
+      <div class="guessed-word" data-animation="fade-from-bottom" data-animation-duration="0.5s" data-animation-delay="0.75s"></div>
+
+      <div data-animation="fade-from-bottom" data-animation-duration="0.5s" data-animation-delay="1s">
+        <a class="button" href="#start">Play again!</a>
+      </div>
+
+    </div>
+  </template>
+
+  <template id="lose">
+    <div class="app-view" data-scene="lose">
+
+      <h2 class="heading-1" data-animation="fade-from-top" data-animation-duration="0.5s" data-animation-delay="0.25s">Game Over!</h2>
+      <p class="text-transparent" data-animation="fade-from-top" data-animation-duration="0.5s" data-animation-delay="1s">
+        <small>You failed to guess the word</small>
+      </p>
+
+      <div data-animation="fade-in" data-animation-duration="0.5s" data-animation-delay="2s">
+        <a class="button" href="#start">Try again!</a>
+      </div>
+
+    </div>
+  </template>
+
+</body>
+</html>

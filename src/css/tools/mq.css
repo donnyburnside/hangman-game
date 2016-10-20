@@ -1,0 +1,22 @@
+/*
+  Tools: MQ
+  ---------
+  Helper for using media queries anywhere in your CSS
+
+  EXAMPLE USAGE
+
+  @mixin mq 768 { YOUR CSS HERE }
+  Target screens with a minimum width of 768 pixels
+
+  @mixin mq 768, max { YOUR CSS HERE }
+  Target screens with a maximum width of 768 pixels
+
+  @mixin mq 768, min, height { YOUR CSS HERE }
+  Target screens with a minimum height of 768 pixels
+*/
+
+@define-mixin mq $breakpoint: false, $type: min, $prop: width {
+  @media only screen and ( $(type)-$(prop): $(breakpoint)px ) {
+    @mixin-content;
+  }
+}

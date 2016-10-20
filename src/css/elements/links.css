@@ -1,0 +1,10 @@
+/*
+  Element: Links
+  --------------
+  Base styles for links
+*/
+
+a {
+  text-decoration:none;
+  background-color:transparent;
+}

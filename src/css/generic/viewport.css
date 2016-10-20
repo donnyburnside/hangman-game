@@ -1,0 +1,21 @@
+/*
+  Generic: Viewport
+  -----------------
+  developer.mozilla.org/en-US/docs/Web/CSS/@viewport
+*/
+
+@-moz-viewport {
+  width: device-width;
+}
+
+@-ms-viewport {
+  width: device-width;
+}
+
+@-o-viewport {
+  width: device-width;
+}
+
+@-webkit-viewport {
+  width: device-width;
+}

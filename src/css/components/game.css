@@ -1,0 +1,128 @@
+/*
+  Component: Game
+  ---------------
+  Styles for the Game component
+*/
+.game {
+  position:relative;
+  width:100%;
+
+  @mixin mq 768 {
+    max-width:47.5rem;
+    margin-top:-4.25rem;
+    margin-left:auto;
+    margin-right:auto;
+  }
+
+  /*@mixin mq 1024 {
+    max-width:60rem;
+  }*/
+
+  &__header {
+    margin-bottom:2rem;
+
+    @mixin mq 567, max {
+      padding-top:1rem;
+      text-align:center;
+    }
+
+  }
+
+  &__scene {
+    /*width:20rem;
+    height:11.25rem;*/
+
+    background:rgba(255,255,255,0.0625);
+    border-top:1px solid rgba(255,255,255,0.1);
+    border-bottom:1px solid rgba(255,255,255,0.1);
+    text-align:center;
+
+    @mixin mq 767, max {
+      height:13.25rem;
+      margin-left:-1rem;
+      margin-right:-1rem;
+      padding:1rem 0;
+    }
+
+    @mixin mq 768 {
+      position:absolute;
+      top:4.25rem;
+      left:0;
+
+      width:22rem;
+      height:13.25rem;
+      padding:1rem;
+      border:1px solid rgba(255,255,255,0.1);
+    }
+
+    .canvas {
+      /*background:#fff;*/
+    }
+
+  }
+
+  &__controls {
+
+    @mixin mq 768 {
+      width:calc(100% - 24rem);
+      margin-left:24rem;
+    }
+
+    @mixin mq 567, max {
+      text-align:center;
+    }
+
+    .current-word {
+      margin-top:1.5rem;
+      margin-bottom:0.5rem;
+
+      font-size:1.5rem;
+      word-break:break-word;
+      @mixin mq 767, max {
+        text-align:center;
+      }
+    }
+
+    .errors {
+      margin-top:1rem;
+      min-height:18px;
+      font-size:0.875rem;
+      color:rgba(255,0,0,0.75);
+
+      span {
+        animation-name:fade-out;
+        animation-duration:$ui-transition-duration;
+        animation-timing-function:$ui-transition-timing;
+        animation-fill-mode:both;
+        animation-delay:1s;
+      }
+
+    }
+
+    .attempts {
+      margin-top:2rem;
+      @mixin mq 568 {
+        margin-top:1rem;
+      }
+
+      .used-letters {
+        margin-top:1rem;
+        min-height:18px;
+      }
+
+    }
+
+    .form-field {
+      flex:1;
+
+      /* Add negative margin to account for the border-radius on the button */
+      margin-right:-3px;
+    }
+
+    .button {
+      flex:none;
+    }
+
+  }
+
+}

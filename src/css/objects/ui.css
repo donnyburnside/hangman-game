@@ -1,0 +1,73 @@
+/*
+  Object: UI
+  ----------
+  Styles for the User Interface
+*/
+
+.app {
+  width:100%;
+  min-height:100vh;
+
+  /*
+    Setup the view animation
+  */
+
+  &-view {
+    width:100%;
+    min-height:100vh;
+
+    animation-name:fade-in;
+    animation-duration:$ui-transition-duration;
+    animation-timing-function:$ui-transition-timing;
+    animation-fill-mode:both;
+    animation-play-state:paused;
+  }
+
+  /*
+    Start the animation when our JS tells us to
+  */
+
+  &[data-ui-state="animating"] {
+    .app-view {
+      animation-play-state:running;
+    }
+  }
+
+  /*
+    End (or remove) the animation when our JS tells us to
+  */
+
+  &[data-ui-state="animated"] {
+    .app-view {
+      animation:none;
+    }
+  }
+
+
+  /*
+    Loading Animation
+  */
+
+  &[data-view="loading"] {
+    position:relative;
+
+    /* Loading Animation */
+    &:after {
+      content:'';
+      position:fixed;
+      top:calc(50% - 1.25rem);
+      left:calc(50% - 1.25rem);
+      height:2.5rem;
+      width:2.5rem;
+      border:0.5rem solid transparent;
+      border-top:0.5rem solid rgba(255,255,255,0.5);
+      border-radius:50%;
+      transition:opacity 0.5s linear;
+      animation:rotate 1s linear infinite;
+      user-select:none;
+      pointer-events:none;
+    }
+
+  }
+
+}

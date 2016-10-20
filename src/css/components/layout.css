@@ -1,0 +1,95 @@
+/*
+  Component: Layout
+  -----------------
+  Styles for the Layout component
+*/
+
+html {
+  font-family:$body-font;
+  font-weight:300;
+}
+
+body {
+  background-color:$brand-colour-primary;
+  color:rgba(255,255,255,0.875);
+}
+
+.app {
+
+
+  &-view {
+    padding:1rem;
+
+    /*
+      App View scenes
+    */
+
+    &[data-scene="start"] {
+      display:flex;
+      flex-direction:column;
+      align-items:center;
+      justify-content:center;
+
+      background:radial-gradient(center, circle, $brand-colour-secondary, $brand-colour-primary 75%);
+
+      .branding {
+        margin-bottom:2rem;
+      }
+
+    }
+
+    &[data-scene="game"] {
+      background:radial-gradient(right, circle, $brand-colour-secondary, $brand-colour-primary);
+
+      display:flex;
+      flex-direction:column;
+      justify-content:center;
+    }
+
+    &[data-scene="win"] {
+
+      display:flex;
+      flex-direction:column;
+      align-items:center;
+      justify-content:center;
+
+      background:radial-gradient(bottom, circle, $brand-colour-secondary, $brand-colour-primary);
+
+      .branding {
+        margin-bottom:2rem;
+      }
+
+      .guessed-word {
+        margin-top:0.5rem;
+        margin-bottom:2rem;
+
+        font-size:2rem;
+      }
+
+    }
+
+    &[data-scene="lose"] {
+
+      display:flex;
+      flex-direction:column;
+      align-items:center;
+      justify-content:center;
+
+      background:radial-gradient(top, circle, $brand-colour-secondary, $brand-colour-primary);
+
+      p {
+        margin-bottom:1.5rem;
+      }
+    }
+
+  }
+
+  /*
+    Set the colour of the loading animation
+  */
+
+  &[data-view="loading"]:after {
+    border-top-color:$brand-colour-secondary;
+  }
+
+}

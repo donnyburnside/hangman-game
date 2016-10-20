@@ -1,0 +1,52 @@
+/*
+  Component: Typography
+  ---------------------
+  Styles for Typography components
+*/
+
+/*
+  Set the font of all custom headings
+*/
+
+[class^="heading-"] {
+  margin-top:0;
+  margin-bottom:0;
+  font-family:'Merriweather', serif;
+}
+
+/*
+  Heading styles
+*/
+
+.heading {
+  &-1 {
+    font-size:3rem;
+  }
+  &-2 {
+    font-size:2rem;
+  }
+  &-3 {
+    font-size:1rem;
+  }
+}
+
+/*
+  Text Colours
+*/
+
+.text {
+
+  &-brand {
+    color:$brand-colour-primary;
+
+    &--secondary {
+      color:$brand-colour-secondary;
+    }
+
+  }
+
+  &-transparent {
+    color:rgba(255,255,255,0.25);
+  }
+
+}

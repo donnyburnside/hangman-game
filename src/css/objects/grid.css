@@ -1,0 +1,29 @@
+/*
+  Object: Grid
+  ------------
+  Styles for the Grid System
+*/
+
+@import "../../../node_modules/my-grid-system/src/_grid";
+
+$grid-breakpoints: (568, 768, 1024);
+
+.container    {
+  @mixin grid-container;
+}
+
+.row          {
+  @mixin grid-row;
+
+  margin-left:-1rem;
+  margin-right:-1rem;
+}
+
+.column       {
+  @mixin grid-column;
+}
+
+[class^="column-"] {
+  padding-left:1rem;
+  padding-right:1rem;
+}

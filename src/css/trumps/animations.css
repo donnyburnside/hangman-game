@@ -1,0 +1,170 @@
+/*
+  Trumps: Animations
+  -----------------
+  A collection of keyframes for CSS animations
+*/
+
+$animation-durations: (0.25s, 0.5s, 0.75s, 1s, 1.25s, 1.5s, 1.75s, 2s);
+
+/*
+  Setup the animations
+*/
+
+[data-animation] {
+  animation-timing-function:$ui-transition-timing;
+  animation-fill-mode:both;
+
+  /* Default duration */
+  animation-duration:0.25s;
+
+  &[data-animation="fade-from-top"] {
+    animation-name:fade-from-top;
+  }
+
+  &[data-animation="fade-from-bottom"] {
+    animation-name:fade-from-bottom;
+  }
+
+  &[data-animation="fade-from-left"] {
+    animation-name:fade-from-left;
+  }
+
+  &[data-animation="fade-from-right"] {
+    animation-name:fade-from-right;
+  }
+
+  &[data-animation="fade-in"] {
+    animation-name:fade-in;
+  }
+
+  &[data-animation="fade-out"] {
+    animation-name:fade-out;
+  }
+
+  &[data-animation="bounce-in"] {
+    animation-name:bounce-in;
+  }
+
+  &[data-animation="rotate"] {
+    animation-name:rotate;
+  }
+
+  &[data-animation="shake-ltr"] {
+    animation-name:shake-ltr;
+  }
+
+}
+
+/*
+  Generate animation helper classes from the CSS timing settings at the top
+*/
+
+@each $duration in ( $animation-durations ) {
+
+  [data-animation-duration="$(duration)"] {
+    animation-duration: $duration;
+  }
+
+  [data-animation-delay="$(duration)"] {
+    animation-delay: $duration;
+  }
+
+}
+
+@keyframes fade-from-top {
+  0% {
+    transform:translateY(-100%);
+    opacity:0;
+  }
+  100% {
+    transform:translateY(0);
+    opacity:1;
+  }
+}
+
+@keyframes fade-from-bottom {
+  0% {
+    transform:translateY(100%);
+    opacity:0;
+  }
+  100% {
+    transform:translateY(0);
+    opacity:1;
+  }
+}
+
+@keyframes fade-from-left {
+  0% {
+    transform:translateX(-100%);
+    opacity:0;
+  }
+  100% {
+    transform:translateX(0);
+    opacity:1;
+  }
+}
+
+@keyframes fade-from-right {
+  0% {
+    transform:translateX(100%);
+    opacity:0;
+  }
+  100% {
+    transform:translateX(0);
+    opacity:1;
+  }
+}
+
+@keyframes fade-in {
+  0% {
+    opacity:0;
+  }
+  100% {
+    opacity:1;
+  }
+}
+
+@keyframes fade-out {
+  0% {
+    opacity:1;
+  }
+  100% {
+    opacity:0;
+  }
+}
+
+@keyframes bounce-in {
+  0% {
+    transform:scale(0);
+  }
+  80% {
+    transform:scale(1.2);
+  }
+  100% {
+    transform:scale(1);
+  }
+}
+
+@keyframes rotate {
+  0% {
+    transform:rotate(0deg);
+  }
+  100% {
+    transform:rotate(360deg);
+  }
+}
+
+@keyframes shake-ltr {
+  10%, 90% {
+    transform:translateX(-0.25rem);
+  }
+  20%, 80% {
+    transform:translateX(0.25rem);
+  }
+  30%, 50%, 70% {
+    transform:translateX(-0.5rem);
+  }
+  40%, 60% {
+    transform:translateX(0.5rem);
+  }
+}
